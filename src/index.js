@@ -21,10 +21,18 @@ const catcherList = (state = ['Roy Campanella', 'Elston Howard', 'Kenji Jojima']
     return state
 }
 
-const currentPitcher = (state = 'Elston Howard', action) => {
-    console.log('curr pitcher action.payload', action.payload)
-    if ('MAKE_CURR_PITCHER' === 'action.payload') {
-        console.log('curr pitcher action.payload', action.payload)
+const currentPitcher = (state = ['billy'], action) => {
+    console.log('curr pitcher action.payload', action.type)
+    if ('MAKE_CURR_PITCHER' === action.type) {
+        console.log('curr pitcher action.payload in if', action.payload)
+        return action.payload
+    }
+    return state
+}
+
+const currentCatcher = (state = ['wilma'], action) => {
+    console.log('currentcatch', action.payload)
+    if ('MAKE_CURR_CATCHER' === action.type) {
         return action.payload
     }
     return state
@@ -35,7 +43,8 @@ const storeInstance = createStore(
     combineReducers({
         pitcherList,
         catcherList,
-        currentPitcher
+        currentPitcher,
+        currentCatcher
     })
 )
 

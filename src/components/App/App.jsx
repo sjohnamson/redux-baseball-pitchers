@@ -14,7 +14,7 @@ function App() {
     <div>
       <h1>Redux Baseball Pitchers</h1>
       <OnTheMound />
-      {/* <BehindThePlate /> */}
+      <BehindThePlate />
       <TotalPitchers />
       <TotalCatchers />
       <h3>All Pitchers</h3>
